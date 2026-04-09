@@ -13,6 +13,7 @@ html {
 body {
     overflow-x: hidden;
     width: 100%;
+    min-height: 100vh;
 }
 
 /* ===== NAVIGATION ===== */
@@ -49,6 +50,12 @@ body {
 .bo {
     border: 2px solid black;
     border-radius: 15px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bo:hover {
+    background-color: black;
+    color: white;
 }
 
 /* Hamburger Menu */
@@ -141,6 +148,7 @@ body {
 .cont3 img {
     height: 40px;
     width: auto;
+    max-width: 100%;
     object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.7;
@@ -215,6 +223,12 @@ body {
     border-bottom: 6px solid black;
     border-radius: 2.5rem;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .green {
@@ -254,20 +268,21 @@ body {
     font-weight: 300;
     cursor: pointer;
     transition: opacity 0.3s ease;
+    display: inline-block;
 }
 
 .lm:hover {
     opacity: 0.7;
 }
 
-.grey p {
+.grey .text2 p {
     background-color: #B9FF66;
     padding: 2px 6px;
     border-radius: 9px;
     width: max-content;
 }
 
-.black p {
+.black .text2 p {
     background-color: white;
     color: black;
     padding: 2px 6px;
@@ -275,7 +290,7 @@ body {
     width: max-content;
 }
 
-.green p {
+.green .text2 p {
     background-color: white;
     color: black;
     padding: 2px 6px;
@@ -356,6 +371,7 @@ body {
     font-weight: 300;
     cursor: pointer;
     transition: opacity 0.3s ease;
+    display: inline-block;
 }
 
 .learn:hover {
@@ -370,7 +386,29 @@ body {
 
 /* ===== RESPONSIVE BREAKPOINTS ===== */
 
-/* Tablet - 1024px and below */
+/* Large Desktop - 1280px and above (default styles above) */
+
+/* Desktop - 1280px and below */
+@media (max-width: 1280px) {
+    .cont2 {
+        gap: 1.5rem;
+    }
+
+    .cont2 img {
+        max-width: 450px;
+    }
+
+    .poster {
+        min-height: 230px;
+        padding: 1.25rem 1.75rem;
+    }
+
+    .cont6 img {
+        max-width: 320px;
+    }
+}
+
+/* Tablet Landscape - 1024px and below */
 @media (max-width: 1024px) {
     .cont5 {
         grid-template-columns: 1fr;
@@ -386,6 +424,10 @@ body {
 
     .cont6 img {
         max-width: 280px;
+    }
+
+    .cont7 {
+        padding: 2.5rem 1.5rem;
     }
 }
 
@@ -427,6 +469,7 @@ body {
 
     .bo {
         margin-top: 1rem;
+        width: auto;
     }
 
     /* Hamburger Animation */
@@ -458,6 +501,15 @@ body {
         order: -1;
     }
 
+    /* Partners */
+    .cont3 {
+        gap: 1.5rem;
+    }
+
+    .cont3 img {
+        height: 30px;
+    }
+
     /* Services Header */
     .cont4 {
         flex-direction: column;
@@ -468,6 +520,7 @@ body {
     .para,
     #xy {
         text-align: center;
+        min-width: auto;
     }
 
     /* Service Cards */
@@ -482,6 +535,7 @@ body {
         width: 60%;
         max-width: 200px;
         margin-top: 1.5rem;
+        order: 1;
     }
 
     .text2 {
@@ -524,38 +578,52 @@ body {
 
     .text4 {
         padding: 1rem 0;
+        text-align: center;
+    }
+
+    .learn {
+        display: block;
     }
 }
 
-/* Mobile - 480px and below */
-@media (max-width: 480px) {
+/* Large Mobile - 640px and below */
+@media (max-width: 640px) {
     .nav {
         padding: 1rem 5%;
     }
 
     .cont2 {
-        padding: 1rem 5%;
         margin-bottom: 2rem;
+    }
+
+    .text {
+        font-size: 1.75rem;
+    }
+
+    .p {
+        font-size: 1rem;
     }
 
     .button {
         width: 100%;
         padding: 1rem;
+        text-align: center;
     }
 
     .cont3 {
-        gap: 1rem;
-        padding: 1rem 5%;
-        margin-bottom: 2rem;
+        gap: 1.25rem;
+        padding: 1.5rem 5%;
+        margin-bottom: 2.5rem;
     }
 
     .cont3 img {
-        height: 25px;
+        height: 28px;
     }
 
     .cont4 {
         padding: 0 5%;
         margin-bottom: 1.5rem;
+        gap: 1rem;
     }
 
     .but {
@@ -565,32 +633,162 @@ body {
 
     .cont5 {
         padding: 0 5%;
-        gap: 1rem;
+        gap: 1.25rem;
     }
 
     .lhs {
-        gap: 1rem;
+        gap: 1.25rem;
     }
 
     .poster {
-        border-radius: 1.5rem;
-        padding: 1.5rem 1rem;
+        border-radius: 1.75rem;
+        padding: 1.5rem 1.25rem;
+    }
+
+    .poster img {
+        width: 55%;
+        max-width: 180px;
     }
 
     .cont6 {
         margin: 0 5%;
-        border-radius: 1.5rem;
-        margin-bottom: 2rem;
+        border-radius: 1.75rem;
+        margin-bottom: 2.5rem;
+        padding: 1.75rem;
     }
 
     .cont7 {
         margin: 0 5%;
-        border-radius: 1.5rem;
+        border-radius: 1.75rem;
+        margin-bottom: 2.5rem;
+        padding: 1.75rem;
+    }
+
+    .right {
+        width: 75%;
+    }
+}
+
+/* Small Mobile - 480px and below */
+@media (max-width: 480px) {
+    .left {
+        font-size: 1.4rem;
+    }
+
+    .text {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cont3 {
+        gap: 1rem;
+        padding: 1rem 5%;
         margin-bottom: 2rem;
+    }
+
+    .cont3 img {
+        height: 22px;
+    }
+
+    .but {
+        font-size: 1.25rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .poster {
+        border-radius: 1.5rem;
+        padding: 1.25rem 1rem;
+    }
+
+    .text2 {
+        font-size: 1.1rem;
+    }
+
+    .lm {
+        font-size: 0.95rem;
+        margin-top: 1rem;
+    }
+
+    .cont6 {
+        border-radius: 1.5rem;
         padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .f1 div {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .f1 p {
+        font-size: 0.95rem;
+    }
+
+    .cont7 {
+        border-radius: 1.5rem;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .text4 {
+        font-size: 0.9rem;
+    }
+
+    .learn {
+        font-size: 1rem;
+        margin-top: 1rem;
     }
 
     .right {
         width: 80%;
+        max-width: 280px;
+    }
+}
+
+/* Extra Small Mobile - 320px and below */
+@media (max-width: 320px) {
+    .nav {
+        padding: 0.75rem 4%;
+    }
+
+    .left {
+        font-size: 1.25rem;
+    }
+
+    .cont2 {
+        padding: 1rem 4%;
+    }
+
+    .text {
+        font-size: 1.35rem;
+    }
+
+    .cont3 img {
+        height: 18px;
+    }
+
+    .cont4,
+    .cont5,
+    .cont6,
+    .cont7 {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+
+    .cont5 {
+        padding: 0 4%;
+    }
+
+    .poster {
+        padding: 1rem;
+    }
+
+    .right {
+        width: 85%;
     }
 }
