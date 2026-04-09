@@ -1,0 +1,9 @@
+{
+  "name": "positivus-landing-page",
+  "version": "1.0.0",
+  "description": "Responsive digital marketing agency landing page",
+  "scripts": {
+    "dev": "npx serve .",
+    "start": "npx serve ."
+  }
+}
